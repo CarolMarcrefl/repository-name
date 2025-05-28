@@ -38,8 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'companies',
+    'companies.apps.CompaniesConfig',  # Ensure this is the only entry for the companies app
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
