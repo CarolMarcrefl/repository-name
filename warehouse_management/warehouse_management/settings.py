@@ -28,6 +28,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+LANGUAGE_CODE = 'ru-ru'  # Установите язык на русский
+
+TIME_ZONE = 'Europe/Moscow'  # Установите часовой пояс, если это необходимо
 
 # Application definition
 

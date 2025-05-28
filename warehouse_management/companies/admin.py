@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.contrib.auth.models import User
-from .models import oaexam
+from .models import aoexam
 
 
 class ExamAdmin(admin.ModelAdmin):
@@ -32,4 +32,4 @@ class ExamAdmin(admin.ModelAdmin):
 
 
 # Регистрация модели в админке
-admin.site.register(oaexam, ExamAdmin)
+admin.site.register(aoexam, ExamAdmin)
