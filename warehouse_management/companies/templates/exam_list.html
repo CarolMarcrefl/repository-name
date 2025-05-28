@@ -1,16 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title }}</title>
+    <title>Список экзаменов</title>
 </head>
 <body>
-    <h1>{{ title }}</h1>
-    <h2>Студент: {{ student_name }}</h2>
-    <h2>Группа: {{ group_number }}</h2>
+    <h1>Список экзаменов</h1>
+    <p><strong>Студент:</strong> Орлова Анна Александровна</p>
+    <p><strong>Группа:</strong> 241-672</p>
 
-    <table>
+    <table border="1">
         <thead>
             <tr>
                 <th>Название экзамена</th>
@@ -27,7 +26,13 @@
                 <td>{{ exam.exam_name }}</td>
                 <td>{{ exam.created_at }}</td>
                 <td>{{ exam.exam_date }}</td>
-                <td><img src="{{ exam.exam_image.url }}" alt="{{ exam.exam_name }}" width="100"></td>
+                <td>
+                    {% if exam.exam_image %}
+                        <img src="{{ exam.exam_image.url }}" alt="{{ exam.exam_name }}" style="width: 100px; height: auto;">
+                    {% else %}
+                        Нет изображения
+                    {% endif %}
+                </td>
                 <td>
                     {% for user in exam.users.all %}
                         {{ user.username }}{% if not forloop.last %}, {% endif %}

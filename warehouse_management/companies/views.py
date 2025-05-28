@@ -2,6 +2,10 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from .models import aoexam
 
+def exam_list(request):
+    exams = aoexam.objects.all()  # Получаем все экзамены
+    return render(request, 'exam.html', {'exams': exams})
+
 def home(request):
     return HttpResponse("Welcome to the Warehouse Management System!")
 

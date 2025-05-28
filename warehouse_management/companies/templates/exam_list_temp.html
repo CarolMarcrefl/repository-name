@@ -1,16 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title }}</title>
+    <title>Список экзаменов</title>
 </head>
 <body>
-    <h1>{{ title }}</h1>
-    <h2>Студент: {{ student_name }}</h2>
-    <h2>Группа: {{ group_number }}</h2>
+    <h1>Список экзаменов</h1>
+    <p><strong>Студент:</strong> Орлова Анна Александровна</p>
+    <p><strong>Группа:</strong> 241-672</p>
 
-    <table>
+    <table border="1">
         <thead>
             <tr>
                 <th>Название экзамена</th>
@@ -22,20 +21,46 @@
             </tr>
         </thead>
         <tbody>
-            {% for exam in exams %}
             <tr>
-                <td>{{ exam.exam_name }}</td>
-                <td>{{ exam.created_at }}</td>
-                <td>{{ exam.exam_date }}</td>
-                <td><img src="{{ exam.exam_image.url }}" alt="{{ exam.exam_name }}" width="100"></td>
-                <td>
-                    {% for user in exam.users.all %}
-                        {{ user.username }}{% if not forloop.last %}, {% endif %}
-                    {% endfor %}
-                </td>
-                <td>{{ exam.is_public }}</td>
+                <td>Экзамен по русскому языку</td>
+                <td>May 28, 2025, 10:31 a.m.</td>
+                <td>May 31, 2025, noon</td>
+                <td>Экзамен по русскому языку</td>
+                <td>owners, carolinemeta.r25@gmail.com</td>
+                <td>True</td>
             </tr>
-            {% endfor %}
+            <tr>
+                <td>Математический экзамен</td>
+                <td>May 28, 2025, 10:31 a.m.</td>
+                <td>May 30, 2025, noon</td>
+                <td>Математический экзамен</td>
+                <td>carolinemeta.r25@gmail.com</td>
+                <td>True</td>
+            </tr>
+            <tr>
+                <td>Экзамен по географии</td>
+                <td>May 28, 2025, 10:31 a.m.</td>
+                <td>May 29, 2025, 6 p.m.</td>
+                <td>Экзамен по географии</td>
+                <td>carolinemeta.r25@gmail.com</td>
+                <td>True</td>
+            </tr>
+            <tr>
+                <td>Экзамен по русскому языку</td>
+                <td>May 28, 2025, 10:32 a.m.</td>
+                <td>May 30, 2025, noon</td>
+                <td>Экзамен по русскому языку</td>
+                <td>owners, carolinemeta.r25@gmail.com</td>
+                <td>False</td>
+            </tr>
+            <tr>
+                <td>Экзамен по физике</td>
+                <td>May 28, 2025, 10:32 a.m.</td>
+                <td>May 29, 2025, 10:32 a.m.</td>
+                <td>Экзамен по физике</td>
+                <td>owners, carolinemeta.r25@gmail.com</td>
+                <td>True</td>
+            </tr>
         </tbody>
     </table>
 </body>
