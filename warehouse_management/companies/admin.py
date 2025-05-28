@@ -4,7 +4,8 @@ from .models import aoexam
 
 
 class ExamAdmin(admin.ModelAdmin):
-    # Поля, которые отображаются в списке
+    def __str__(self):
+        return self.exam_name
     list_display = ('exam_name', 'created_at', 'exam_date', 'is_public')
 
     # Поиск по названию экзамена и email пользователя
